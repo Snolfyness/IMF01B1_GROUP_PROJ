@@ -5,7 +5,7 @@ Option Infer Off
 Public Class Quiz
     'private variables
     Private _Question As String
-    Private _Answer As Double
+    Private _Answer As Integer
 
     'Property methods
     Public ReadOnly Property Question As String
@@ -14,7 +14,7 @@ Public Class Quiz
         End Get
     End Property
 
-    Public ReadOnly Property Answer As Double
+    Public ReadOnly Property Answer As Integer
         Get
             Return _Answer
         End Get
@@ -37,7 +37,7 @@ Public Class Quiz
     End Sub
 
     'GenerateAddition method
-    Public Sub GenerateAddition()
+    Private Sub GenerateAddition()
         Dim a, b As Integer
         a = CInt(100 * Rnd() + 1) 'Might be ported to the helper class 
         b = CInt(100 * Rnd() + 1)
@@ -47,17 +47,22 @@ Public Class Quiz
     End Sub
 
     'GenerateSubtraction method
-    Public Sub GenerateSubtraction()
+    Private Sub GenerateSubtraction()
         Dim a, b As Integer
         a = CInt(100 * Rnd() + 1)
         b = CInt(100 * Rnd() + 1)
+
+        While a < b
+            a = CInt(100 * Rnd() + 1)
+            b = CInt(100 * Rnd() + 1)
+        End While
 
         _Question = a & " - " & b & Environment.NewLine
         _Answer = a - b
     End Sub
 
     'GenerateMultiplication method
-    Public Sub GenerateMultiplication()
+    Private Sub GenerateMultiplication()
         Dim a, b As Integer
         a = CInt(100 * Rnd() + 1)
         b = CInt(100 * Rnd() + 1)
@@ -67,14 +72,17 @@ Public Class Quiz
     End Sub
 
     'GenerateDivision method
-    Public Sub GenerateDivision()
+    Private Sub GenerateDivision()
         Dim a, b As Integer
         a = CInt(100 * Rnd() + 1)
         b = CInt(100 * Rnd() + 1)
 
+        While Not (a Mod b = 0)
+            a = CInt(100 * Rnd() + 1)
+            b = CInt(100 * Rnd() + 1)
+        End While
         _Question = a & " / " & b & Environment.NewLine
-        _Answer = a / b
+        _Answer = CInt(a / b)
     End Sub
-
 
 End Class

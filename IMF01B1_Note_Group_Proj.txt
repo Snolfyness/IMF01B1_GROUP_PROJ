@@ -63,10 +63,14 @@ Contributed to design - Rasalanavho - UML
 
 
 Classes
-Marks
-Materials
-Quiz
-MakeQuestion (Helper class)
+Subject
+Math
+MathQuiz
+Helper
+
+Maybe
+English
+Other subjects
 
 Functions
 Dynamic quizes
