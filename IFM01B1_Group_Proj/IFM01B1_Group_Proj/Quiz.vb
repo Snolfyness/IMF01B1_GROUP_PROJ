@@ -30,6 +30,7 @@ Public Class Quiz
             Case 3
                 GenerateMultiplication()
             Case 4
+                GenerateDivision()
             Case Else
                 MsgBox("Please select a valid option")
         End Select
@@ -63,6 +64,16 @@ Public Class Quiz
 
         _Question = a & " x " & b & Environment.NewLine
         _Answer = a * b
+    End Sub
+
+    'GenerateDivision method
+    Public Sub GenerateDivision()
+        Dim a, b As Integer
+        a = CInt(100 * Rnd() + 1)
+        b = CInt(100 * Rnd() + 1)
+
+        _Question = a & " / " & b & Environment.NewLine
+        _Answer = a / b
     End Sub
 
 
