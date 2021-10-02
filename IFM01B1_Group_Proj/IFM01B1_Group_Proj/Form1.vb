@@ -3,7 +3,6 @@ Option Explicit On
 Option Infer Off
 
 Public Class frmELearning
-    Private _Questions() As MathQuestion
 
     Private Sub btnLearnMaterial_Click(sender As Object, e As EventArgs) Handles btnLearnMaterial.Click
 
