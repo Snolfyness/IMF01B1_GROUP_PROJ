@@ -24,6 +24,7 @@ Public Class Quiz
     Public Sub New(options As Integer)
         Select Case options
             Case 1
+                GenerateAddition()
             Case 2
             Case 3
             Case 4
@@ -32,8 +33,14 @@ Public Class Quiz
         End Select
     End Sub
 
-    Public Function GenerateAdditionQuestion() As String
+    'GenerateAdditionQuestion
+    Public Sub GenerateAddition()
+        Dim a, b As Integer
+        a = CInt(100 * Rnd() + 1)
+        b = CInt(100 * Rnd() + 1)
 
-    End Function
+        _Question = a & " + " & b & Environment.NewLine
+        _Answer = a + b
+    End Sub
 
 End Class
