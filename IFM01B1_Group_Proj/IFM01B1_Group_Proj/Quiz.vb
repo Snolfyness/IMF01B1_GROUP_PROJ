@@ -36,6 +36,15 @@ Public Class MathQuestion
         End Select
     End Sub
 
+    'checks input against answer
+    Public Function CheckAnswer(input As Integer) As Boolean
+        If input = _Answer Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     'GenerateAddition method
     Private Sub GenerateAddition()
         Dim a, b As Integer
