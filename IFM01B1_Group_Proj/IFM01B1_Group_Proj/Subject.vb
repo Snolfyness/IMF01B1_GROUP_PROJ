@@ -1,6 +1,7 @@
 ﻿Option Strict On
 Option Explicit On
 Option Infer Off
-Public Class Subject
+Public MustInherit Class Subject
+
 
 End Class
