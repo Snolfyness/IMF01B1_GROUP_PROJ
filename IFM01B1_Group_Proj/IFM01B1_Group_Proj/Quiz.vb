@@ -53,5 +53,15 @@ Public Class Quiz
         _Answer = a - b
     End Sub
 
+    'GenerateMultiplication method
+    Public Sub GenerateMultiplication()
+        Dim a, b As Integer
+        a = CInt(100 * Rnd() + 1)
+        b = CInt(100 * Rnd() + 1)
+
+        _Question = a & " x " & b & Environment.NewLine
+        _Answer = a * b
+    End Sub
+
 
 End Class
