@@ -33,7 +33,7 @@ Public Class Quiz
         End Select
     End Sub
 
-    'GenerateAdditionQuestion
+    'GenerateAddition method
     Public Sub GenerateAddition()
         Dim a, b As Integer
         a = CInt(100 * Rnd() + 1)
@@ -42,5 +42,16 @@ Public Class Quiz
         _Question = a & " + " & b & Environment.NewLine
         _Answer = a + b
     End Sub
+
+    'GenerateSubtraction method
+    Public Sub GenerateSubtraction()
+        Dim a, b As Integer
+        a = CInt(100 * Rnd() + 1)
+        b = CInt(100 * Rnd() + 1)
+
+        _Question = a & " - " & b & Environment.NewLine
+        _Answer = a - b
+    End Sub
+
 
 End Class
