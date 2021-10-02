@@ -1,9 +1,9 @@
 ﻿' *****************************************************************
 ' Team Number: assigned to team
 ' Team Member 1 Details: Lin, J (221179979)
-' Team Member 2 Details: Surname, Initials (Student #)
-' Team Member 3 Details: Surname, Initials (Student #)
-' Team Member 4 Details: e.g. Smith, J (202000001)
+' Team Member 2 Details: Khosa, MTS (221080579)
+' Team Member 3 Details: Rasalanavho, Initials (220054293)
+' Team Member 4 Details: none
 ' Practical: Team Project
 ' Class name: LearningMaterial
 ' *****************************************************************
