@@ -7,4 +7,8 @@ Public Class Helper
         temp = CInt((upper * Rnd()) + lower)
         Return temp
     End Function
+
+    Public Sub ValidateInt(value As String)
+        '
+    End Sub
 End Class
