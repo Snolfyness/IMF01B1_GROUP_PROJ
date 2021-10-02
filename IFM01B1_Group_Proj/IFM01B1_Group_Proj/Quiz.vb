@@ -38,7 +38,7 @@ Public Class Quiz
     'GenerateAddition method
     Public Sub GenerateAddition()
         Dim a, b As Integer
-        a = CInt(100 * Rnd() + 1) 'Might be ported to the helper class
+        a = CInt(100 * Rnd() + 1) 'Might be ported to the helper class 
         b = CInt(100 * Rnd() + 1)
 
         _Question = a & " + " & b & Environment.NewLine
