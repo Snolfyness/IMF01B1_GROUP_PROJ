@@ -2,7 +2,7 @@
 Option Explicit On
 Option Infer Off
 
-Public Class Quiz
+Public Class MathQuiz
     'private variables
     Private _Question As String
     Private _Answer As Integer
