@@ -3,9 +3,24 @@ Option Explicit On
 Option Infer Off
 
 Public Class Quiz
-    Private Question As String
-    Private answer As Double
+    'private variables
+    Private _Question As String
+    Private _Answer As Double
 
+    'Property methods
+    Public ReadOnly Property Question As String
+        Get
+            Return _Question
+        End Get
+    End Property
+
+    Public ReadOnly Property Answer As Double
+        Get
+            Return _Answer
+        End Get
+    End Property
+
+    'Constructor
     Public Sub New(options As Integer)
         Select Case options
             Case 1
@@ -17,5 +32,8 @@ Public Class Quiz
         End Select
     End Sub
 
+    Public Function GenerateAdditionQuestion() As String
+
+    End Function
 
 End Class
