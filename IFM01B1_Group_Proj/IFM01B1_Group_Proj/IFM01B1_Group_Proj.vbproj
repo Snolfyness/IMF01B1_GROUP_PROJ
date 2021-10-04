@@ -84,6 +84,7 @@
     <Compile Include="HelperClass.vb" />
     <Compile Include="LearningMaterial.vb" />
     <Compile Include="Math.vb" />
+    <Compile Include="MathQuestion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,7 +100,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Quiz.vb" />
     <Compile Include="Subject.vb" />
   </ItemGroup>
   <ItemGroup>
