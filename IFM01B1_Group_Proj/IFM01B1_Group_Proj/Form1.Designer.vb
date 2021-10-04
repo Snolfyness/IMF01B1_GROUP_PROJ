@@ -24,43 +24,47 @@ Partial Class frmELearning
     Private Sub InitializeComponent()
         Me.btnLearnMaterial = New System.Windows.Forms.Button()
         Me.btnQuiz = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtdisplay = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnLearnMaterial
         '
-        Me.btnLearnMaterial.Location = New System.Drawing.Point(12, 33)
+        Me.btnLearnMaterial.Location = New System.Drawing.Point(11, 26)
+        Me.btnLearnMaterial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLearnMaterial.Name = "btnLearnMaterial"
-        Me.btnLearnMaterial.Size = New System.Drawing.Size(263, 66)
+        Me.btnLearnMaterial.Size = New System.Drawing.Size(234, 53)
         Me.btnLearnMaterial.TabIndex = 0
         Me.btnLearnMaterial.Text = "Learning Material"
         Me.btnLearnMaterial.UseVisualStyleBackColor = True
         '
         'btnQuiz
         '
-        Me.btnQuiz.Location = New System.Drawing.Point(12, 114)
+        Me.btnQuiz.Location = New System.Drawing.Point(11, 91)
+        Me.btnQuiz.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnQuiz.Name = "btnQuiz"
-        Me.btnQuiz.Size = New System.Drawing.Size(263, 66)
+        Me.btnQuiz.Size = New System.Drawing.Size(234, 53)
         Me.btnQuiz.TabIndex = 1
         Me.btnQuiz.Text = "Take Quiz"
         Me.btnQuiz.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtdisplay
         '
-        Me.TextBox1.Location = New System.Drawing.Point(321, 17)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(451, 399)
-        Me.TextBox1.TabIndex = 2
+        Me.txtdisplay.Location = New System.Drawing.Point(285, 14)
+        Me.txtdisplay.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtdisplay.Multiline = True
+        Me.txtdisplay.Name = "txtdisplay"
+        Me.txtdisplay.Size = New System.Drawing.Size(401, 320)
+        Me.txtdisplay.TabIndex = 2
         '
         'frmELearning
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(711, 360)
+        Me.Controls.Add(Me.txtdisplay)
         Me.Controls.Add(Me.btnQuiz)
         Me.Controls.Add(Me.btnLearnMaterial)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmELearning"
         Me.Text = "E-Learning"
         Me.ResumeLayout(False)
@@ -70,5 +74,5 @@ Partial Class frmELearning
 
     Friend WithEvents btnLearnMaterial As Button
     Friend WithEvents btnQuiz As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtdisplay As TextBox
 End Class
