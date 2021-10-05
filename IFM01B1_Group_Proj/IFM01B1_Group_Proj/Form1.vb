@@ -13,6 +13,9 @@ Option Explicit On
 Option Infer Off
 
 Public Class frmELearning
+    Friend Class Helper
+    End Class
+
     Private subjects() As Subject
     Private nsubjects As Integer
 
@@ -28,6 +31,7 @@ Public Class frmELearning
         'Choices for the learning material
 
         Select Case subject
+
             Case 1 ' mathematics
                 txtdisplay.Clear()
                 Dim chapter As Integer = CInt(InputBox("Which chapter would you like to focus on?" & Environment.NewLine & "Options:" & Environment.NewLine & "1 - Addition" & Environment.NewLine & "2 - Subtraction" & Environment.NewLine & "3 - Multiplication" & Environment.NewLine & "4 - Division"))
@@ -48,10 +52,26 @@ Public Class frmELearning
 
     End Sub
 
+    'this is the quiz function that is randomized
     Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
         Dim choice As Integer
         Select Case choice
             Case 1 'Maths
+                Dim Quiz(10) As MathQuestion
+                For q As Integer = 1 To 10
+                    Dim temp As String
+                    Dim question As Integer
+                    question = q Mod 5
+
+                    Select Case question
+                        Case 0
+
+                    End Select
+
+                    temp = InputBox("What is ")
+                Next
+
+
             Case 2 'English
             Case Else
                 txtdisplay.Text = "Please enter a valid option" & Environment.NewLine
