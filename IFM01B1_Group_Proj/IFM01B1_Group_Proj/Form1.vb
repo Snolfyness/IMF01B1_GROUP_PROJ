@@ -13,8 +13,7 @@ Option Explicit On
 Option Infer Off
 
 Public Class frmELearning
-    Friend Class Helper
-    End Class
+
 
     Private subjects() As Subject
         Private nsubjects As Integer
