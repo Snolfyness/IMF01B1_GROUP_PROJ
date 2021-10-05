@@ -82,7 +82,6 @@
     </Compile>
     <Compile Include="Helper.vb" />
     <Compile Include="HelperClass.vb" />
-    <Compile Include="LearningMaterial.vb" />
     <Compile Include="Math.vb" />
     <Compile Include="MathQuestion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
