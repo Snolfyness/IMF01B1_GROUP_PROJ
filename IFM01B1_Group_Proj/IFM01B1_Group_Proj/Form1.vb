@@ -28,13 +28,11 @@ Public Class frmELearning
         'Choices for the learning material
 
         Select Case subject
-
-
             Case 1 ' mathematics
                 txtdisplay.Clear()
                 Dim chapter As Integer = CInt(InputBox("Which chapter would you like to focus on?" & Environment.NewLine & "Options:" & Environment.NewLine & "1 - Addition" & Environment.NewLine & "2 - Subtraction" & Environment.NewLine & "3 - Multiplication" & Environment.NewLine & "4 - Division"))
-                Dim maths As Math
-                maths = New Math(subject, mark, chapter)
+                Dim maths As math
+                maths = New math(subject, mark, chapter)
                 subjects(nsubjects) = maths
                 txtdisplay.Text &= maths.displayLearningmaterial()
 
@@ -51,6 +49,12 @@ Public Class frmELearning
     End Sub
 
     Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
-
+        Dim choice As Integer
+        Select Case choice
+            Case 1 'Maths
+            Case 2 'English
+            Case Else
+                txtdisplay.Text = "Please enter a valid option" & Environment.NewLine
+        End Select
     End Sub
 End Class
