@@ -80,7 +80,6 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Helper.vb" />
     <Compile Include="HelperClass.vb" />
     <Compile Include="Math.vb" />
     <Compile Include="MathQuestion.vb" />

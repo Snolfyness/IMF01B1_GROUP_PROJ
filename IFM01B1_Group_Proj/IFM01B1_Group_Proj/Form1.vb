@@ -69,6 +69,14 @@ Public Class frmELearning
 
                     temp = InputBox("Answer for: " & Quiz(q).Question)
                     display &= Quiz(q).Question & Environment.NewLine
+                    display &= "Answer: " & Quiz(q).Answer & Environment.NewLine
+
+                    If Quiz(q).CheckAnswer(CInt(temp)) Then
+                        display &= "Correct answer: " & Quiz(q).Answer & Environment.NewLine
+                    Else
+
+                    End If
+
                 Next
 
 
