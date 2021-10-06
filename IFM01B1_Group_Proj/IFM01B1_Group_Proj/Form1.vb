@@ -69,7 +69,7 @@ Public Class frmELearning
                     Quiz(q) = New MathQuestion(question)
 
                     temp = InputBox("Answer for: " & Quiz(q).Question)
-                    display &= Quiz(q).Question & Environment.NewLine
+                    display = Quiz(q).Question & Environment.NewLine
                     display &= "Answer: " & Quiz(q).Answer & Environment.NewLine
 
                     If Quiz(q).CheckAnswer(CInt(temp)) Then
