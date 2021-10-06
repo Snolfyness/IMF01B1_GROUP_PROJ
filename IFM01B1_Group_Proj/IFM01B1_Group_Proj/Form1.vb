@@ -50,20 +50,20 @@ Public Class frmELearning
 
     Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
         Dim choice As Integer
+        Dim display As String
         Select Case choice
             Case 1 'Maths
                 Dim Quiz(10) As MathQuestion
                 For q As Integer = 1 To 10
                     Dim temp As String
                     Dim question As Integer
-                    question = q Mod 5
+                    'question will always be 0, 1, 2 or 3
+                    question = q Mod 4
 
-                    Select Case question
-                        Case 0
+                    Quiz(q) = New MathQuestion(question)
 
-                    End Select
-
-                    temp = InputBox("What is ")
+                    temp = InputBox("Answer for: " & Quiz(q).Question)
+                    display &= Quiz(q).Question & Environment.NewLine
                 Next
             Case 2 'English
             Case Else

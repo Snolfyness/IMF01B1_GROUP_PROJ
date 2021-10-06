@@ -32,13 +32,13 @@ Public Class MathQuestion
     'Constructor
     Public Sub New(options As Integer)
         Select Case options
-            Case 1
+            Case 0
                 GenerateAddition()
-            Case 2
+            Case 1
                 GenerateSubtraction()
-            Case 3
+            Case 2
                 GenerateMultiplication()
-            Case 4
+            Case 3
                 GenerateDivision()
             Case Else
                 MsgBox("Please select a valid option")
