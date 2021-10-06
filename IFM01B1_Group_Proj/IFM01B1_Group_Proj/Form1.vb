@@ -59,6 +59,7 @@ Public Class frmELearning
         Select Case choice
             Case 1 'Maths
                 Dim Quiz(10) As MathQuestion
+                Dim mark As Integer = 0
                 For q As Integer = 1 To 10
                     Dim temp As String
                     Dim question As Integer
@@ -72,11 +73,13 @@ Public Class frmELearning
                     display &= "Answer: " & Quiz(q).Answer & Environment.NewLine
 
                     If Quiz(q).CheckAnswer(CInt(temp)) Then
-                        display &= "Correct answer: " & Quiz(q).Answer & Environment.NewLine
+                        mark += 1
+                        display &= "Correct Answer: Marks " & Environment.NewLine
                     Else
-
+                        display &= "Incorrect Answer: Marks " & Environment.NewLine
                     End If
-
+                    display &= "Marks: " & mark & "/10" & Environment.NewLine
+                    txtdisplay.Text = display
                 Next
 
 
