@@ -82,7 +82,6 @@ Public Class frmELearning
                     txtdisplay.Text = display
                 Next
 
-
             Case 2 'English
             Case Else
                 txtdisplay.Text = "Please enter a valid option" & Environment.NewLine
