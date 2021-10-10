@@ -4,10 +4,7 @@ Option Infer Off
 Public Class English
     Inherits Subject
     'attributes
-    Private _addition As String
-    Private _multiplication As String
-    Private _subtraction As String
-    Private _division As String
+
     Private _choice As Integer
 
     'these are the property methods
