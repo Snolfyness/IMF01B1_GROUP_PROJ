@@ -38,9 +38,8 @@ Public Class English
 
             Case 4 ' adverbs
                 Return displayadverbs()
-
-
-
+            Case Else
+                Return "Please select a valid choice"
         End Select
     End Function
 
