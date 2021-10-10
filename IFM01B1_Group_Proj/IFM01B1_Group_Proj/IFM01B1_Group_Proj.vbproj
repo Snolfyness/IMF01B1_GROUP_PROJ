@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="English.vb" />
+    <Compile Include="EnglishQuestion.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>

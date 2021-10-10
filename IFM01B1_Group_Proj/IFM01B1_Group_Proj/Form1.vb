@@ -12,19 +12,25 @@ Option Strict On
 Option Explicit On
 Option Infer Off
 
+Imports System.IO
+Imports System.Runtime.Serialization.Formatters.Binary
+
 Public Class frmELearning
     Friend Class Helper
     End Class
 
     Private subjects() As Subject
     Private nsubjects As Integer
+    Private file As FileStream
+    Private BF As BinaryFormatter
+    Private filename As String = "SaveAnswers.IFM"
 
     'this button displays the learning material of whatever subjet the learner chooses
     Private Sub btnLearnMaterial_Click(sender As Object, e As EventArgs) Handles btnLearnMaterial.Click
         nsubjects += 1
         ReDim Preserve subjects(nsubjects)
 
-        Dim subject As Integer = CInt(InputBox("Which subject would you like to study?" & Environment.NewLine & "Options: " & Environment.NewLine & "1 - Math" & Environment.NewLine & "2 - English" & Environment.NewLine & "3 - Natural Science"))
+        Dim subject As Integer = CInt(InputBox("Which subject would you like to study?" & Environment.NewLine & "Options: " & Environment.NewLine & "1 - Math" & Environment.NewLine & "2 - English" & Environment.NewLine))
 
         Dim mark As Integer
 
@@ -42,9 +48,11 @@ Public Class frmELearning
 
             Case 2 'english
                 txtdisplay.Clear()
-                Dim chapter As Integer = CInt(InputBox("Which chapter would you like to focus on?" & Environment.NewLine & "Options:" & Environment.NewLine & "1 - Literature" & Environment.NewLine & "2 - Poems" & Environment.NewLine & "3 - " & Environment.NewLine & "4 - Division"))
-
-
+                Dim chapter As Integer = CInt(InputBox("Which chapter would you like to focus on?" & Environment.NewLine & "Options:" & Environment.NewLine & "1 - Nouns" & Environment.NewLine & "2 - Verbs" & Environment.NewLine & "3 - Adjectives" & Environment.NewLine & "4 - Adverbs"))
+                Dim Eng As English
+                Eng = New English(subject, mark, chapter)
+                subjects(nsubjects) = Eng
+                txtdisplay.Text &= Eng.displayLearningmaterial()
         End Select
 
         'this is polymorphism
@@ -56,6 +64,7 @@ Public Class frmELearning
     Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
         Dim choice As Integer
         Dim display As String
+        choice = CInt(InputBox("Which Quiz would you like to take? " & Environment.NewLine & "Options:  " & Environment.NewLine & "1 - Math" & Environment.NewLine & "2 - English"))
         Select Case choice
             Case 1 'Maths
                 Dim Quiz(10) As MathQuestion
@@ -83,8 +92,49 @@ Public Class frmELearning
                 Next
 
             Case 2 'English
+
+                For q As Integer = 1 To 4
+                    Dim temp As String
+                    Dim question As Integer
+
+                Next
             Case Else
                 txtdisplay.Text = "Please enter a valid option" & Environment.NewLine
         End Select
+    End Sub
+
+    'this is the button that allows the user to save their marks
+    Private Sub btnSaveMarks_Click(sender As Object, e As EventArgs) Handles btnSaveMarks.Click
+        file = New FileStream(filename, FileMode.Create, FileAccess.Write)
+        BF = New BinaryFormatter()
+        For h As Integer = 1 To nsubjects
+
+            BF.Serialize(file, subjects(h))
+        Next h
+        file.Close()
+
+        file = Nothing
+        BF = Nothing
+
+        MsgBox("File was saved")
+    End Sub
+
+
+    Private Sub btnViewMarks_Click(sender As Object, e As EventArgs) Handles btnViewMarks.Click
+        txtdisplay.Clear()
+        file = New FileStream(filename, FileMode.Open, FileAccess.Read)
+        BF = New BinaryFormatter()
+        While file.Position < file.Length
+            Dim s As Subject
+            s = DirectCast(BF.Deserialize(file), Subject)
+            ' txtdisplay.Text &=  & Environment.NewLine
+        End While
+
+        file.Close()
+
+    End Sub
+
+    Private Sub btnBestMark_Click(sender As Object, e As EventArgs) Handles btnBestMark.Click
+
     End Sub
 End Class

@@ -22,6 +22,7 @@ Option Infer Off
     Private _subtraction As String
     Private _division As String
     Private _choice As Integer
+    Private _choice2 As Integer
 
     'these are the property methods
     Public Property choice As Integer
@@ -59,13 +60,6 @@ Option Infer Off
         End Select
     End Function
 
-
-    'this function generates the quizes for the user to take
-    Protected Overrides Function Quizes() As Integer
-
-
-
-    End Function
 
     'this function displays addition material
     Public Function displayaddition() As String

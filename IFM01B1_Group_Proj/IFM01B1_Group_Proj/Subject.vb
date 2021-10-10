@@ -68,9 +68,6 @@ Option Infer Off
     Public MustOverride Function displayLearningmaterial() As String
 
 
-    'this function generates quizes for each subject
-    Protected MustOverride Function Quizes() As Integer
-
 
     'this function calculates the total score
     Protected Function calctotal() As Double

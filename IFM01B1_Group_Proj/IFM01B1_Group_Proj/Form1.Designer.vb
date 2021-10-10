@@ -32,68 +32,68 @@ Partial Class frmELearning
         '
         'btnLearnMaterial
         '
-        Me.btnLearnMaterial.Location = New System.Drawing.Point(12, 32)
+        Me.btnLearnMaterial.Location = New System.Drawing.Point(11, 26)
         Me.btnLearnMaterial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnLearnMaterial.Name = "btnLearnMaterial"
-        Me.btnLearnMaterial.Size = New System.Drawing.Size(263, 66)
+        Me.btnLearnMaterial.Size = New System.Drawing.Size(234, 53)
         Me.btnLearnMaterial.TabIndex = 0
         Me.btnLearnMaterial.Text = "Learning Material"
         Me.btnLearnMaterial.UseVisualStyleBackColor = True
         '
         'btnQuiz
         '
-        Me.btnQuiz.Location = New System.Drawing.Point(12, 114)
+        Me.btnQuiz.Location = New System.Drawing.Point(11, 91)
         Me.btnQuiz.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnQuiz.Name = "btnQuiz"
-        Me.btnQuiz.Size = New System.Drawing.Size(263, 66)
+        Me.btnQuiz.Size = New System.Drawing.Size(234, 53)
         Me.btnQuiz.TabIndex = 1
         Me.btnQuiz.Text = "Take Quiz"
         Me.btnQuiz.UseVisualStyleBackColor = True
         '
         'txtdisplay
         '
-        Me.txtdisplay.Location = New System.Drawing.Point(321, 18)
+        Me.txtdisplay.Location = New System.Drawing.Point(285, 14)
         Me.txtdisplay.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtdisplay.Multiline = True
         Me.txtdisplay.Name = "txtdisplay"
-        Me.txtdisplay.Size = New System.Drawing.Size(451, 399)
+        Me.txtdisplay.Size = New System.Drawing.Size(401, 320)
         Me.txtdisplay.TabIndex = 2
         '
         'btnSaveMarks
         '
-        Me.btnSaveMarks.Location = New System.Drawing.Point(12, 195)
+        Me.btnSaveMarks.Location = New System.Drawing.Point(11, 156)
         Me.btnSaveMarks.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSaveMarks.Name = "btnSaveMarks"
-        Me.btnSaveMarks.Size = New System.Drawing.Size(263, 66)
+        Me.btnSaveMarks.Size = New System.Drawing.Size(234, 53)
         Me.btnSaveMarks.TabIndex = 3
         Me.btnSaveMarks.Text = "Save Marks"
         Me.btnSaveMarks.UseVisualStyleBackColor = True
         '
         'btnViewMarks
         '
-        Me.btnViewMarks.Location = New System.Drawing.Point(12, 274)
+        Me.btnViewMarks.Location = New System.Drawing.Point(11, 219)
         Me.btnViewMarks.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnViewMarks.Name = "btnViewMarks"
-        Me.btnViewMarks.Size = New System.Drawing.Size(263, 66)
+        Me.btnViewMarks.Size = New System.Drawing.Size(234, 53)
         Me.btnViewMarks.TabIndex = 4
         Me.btnViewMarks.Text = "View Marks"
         Me.btnViewMarks.UseVisualStyleBackColor = True
         '
         'btnBestMark
         '
-        Me.btnBestMark.Location = New System.Drawing.Point(12, 351)
+        Me.btnBestMark.Location = New System.Drawing.Point(11, 281)
         Me.btnBestMark.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBestMark.Name = "btnBestMark"
-        Me.btnBestMark.Size = New System.Drawing.Size(263, 66)
+        Me.btnBestMark.Size = New System.Drawing.Size(234, 53)
         Me.btnBestMark.TabIndex = 5
         Me.btnBestMark.Text = "Best Mark"
         Me.btnBestMark.UseVisualStyleBackColor = True
         '
         'frmELearning
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(711, 360)
         Me.Controls.Add(Me.btnBestMark)
         Me.Controls.Add(Me.btnViewMarks)
         Me.Controls.Add(Me.btnSaveMarks)
