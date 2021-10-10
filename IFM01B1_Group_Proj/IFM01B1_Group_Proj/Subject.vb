@@ -68,17 +68,6 @@ Option Infer Off
     Public MustOverride Function displayLearningmaterial() As String
 
 
-
-    'this function calculates the total score
-    Protected Function calctotal() As Double
-        'code to add sum of all quizes
-    End Function
-
-    'this function calculates the average of all the quizes completed
-    Protected Function calcaverage() As Double
-        'code to calc average
-    End Function
-
     'this is the constructor
     Public Sub New(name As Integer, mark As Double)
         _name = name
