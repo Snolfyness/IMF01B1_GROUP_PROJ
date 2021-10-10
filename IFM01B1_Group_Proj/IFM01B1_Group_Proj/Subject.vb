@@ -77,7 +77,7 @@ Option Infer Off
     'this function validates all integer variable
     Protected Function validate(value As Double) As Integer
         If value < 0 Then
-            value = 0
+            Return 0
         Else
             Return CInt(value)
         End If
