@@ -56,7 +56,7 @@ Partial Class frmELearning
         Me.txtdisplay.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtdisplay.Multiline = True
         Me.txtdisplay.Name = "txtdisplay"
-        Me.txtdisplay.Size = New System.Drawing.Size(401, 320)
+        Me.txtdisplay.Size = New System.Drawing.Size(401, 358)
         Me.txtdisplay.TabIndex = 2
         '
         'btnSaveMarks
@@ -93,7 +93,7 @@ Partial Class frmELearning
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(711, 360)
+        Me.ClientSize = New System.Drawing.Size(711, 383)
         Me.Controls.Add(Me.btnBestMark)
         Me.Controls.Add(Me.btnViewMarks)
         Me.Controls.Add(Me.btnSaveMarks)

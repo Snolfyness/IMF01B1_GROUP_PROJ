@@ -15,8 +15,19 @@ Public Class English
     'attributes
 
     Private _choice As Integer
+    Private _quiz As EnglishQuestion
 
     'these are the property methods
+    Public Property quiz As EnglishQuestion
+        Get
+            Return _quiz
+
+        End Get
+        Set(value As EnglishQuestion)
+            _quiz = value
+        End Set
+    End Property
+
     Public Property choice As Integer
         Get
             Return _choice
@@ -28,15 +39,17 @@ Public Class English
     'END OF PROPERTY METHODS____________________________________________
 
     'this is the constructor
-    Public Sub New(name As Integer, mark As Integer, choice As Integer)
-        MyBase.New(name, mark)
+    Public Sub New(name As Integer, mark As Integer, choice As Integer, type As String)
+        MyBase.New(name, mark, type)
         Me.choice = choice
+        quiz = New EnglishQuestion(mark)
+
     End Sub
 
     'this function displays the english learing material to prepare the student for the quizes
     Public Overrides Function displayLearningmaterial() As String
         Select Case choice
-            Case 1 ' nouna
+            Case 1 ' nouns
                 Return displaynouns()
 
             Case 2 ' verbs
@@ -115,6 +128,18 @@ Public Class English
         temp &= "" & Environment.NewLine
         temp &= "" & Environment.NewLine
 
+
+        Return temp
+
+    End Function
+
+    'this function returns the users results
+    Public Overrides Function displayresults() As String
+        Dim temp As String
+        temp = ""
+        temp &= "Quiz results " & Environment.NewLine & Environment.NewLine
+        temp &= "Subject name: " & (type) & Environment.NewLine
+        temp &= "Marks: " & (quiz.marks) & Environment.NewLine
 
         Return temp
 

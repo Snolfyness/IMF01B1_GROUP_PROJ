@@ -17,14 +17,19 @@ Option Infer Off
 <Serializable()> Public Class math
     Inherits Subject
     'attributes
-    Private _addition As String
-    Private _multiplication As String
-    Private _subtraction As String
-    Private _division As String
     Private _choice As Integer
-    Private _choice2 As Integer
+    Private _quiz As MathQuestion
 
     'these are the property methods
+    Public Property quiz As MathQuestion
+        Get
+            Return _quiz
+        End Get
+        Set(value As MathQuestion)
+            _quiz = value
+        End Set
+    End Property
+
     Public Property choice As Integer
         Get
             Return _choice
@@ -36,9 +41,12 @@ Option Infer Off
     'END OF PROPERTY METHODS____________________________________________
 
     'this is the constructor
-    Public Sub New(name As Integer, mark As Integer, choice As Integer)
-        MyBase.New(name, mark)
+    Public Sub New(name As Integer, mark As Integer, choice As Integer, type As String, opt As Integer)
+        MyBase.New(name, mark, type)
         Me.choice = choice
+        quiz = New MathQuestion(opt, mark)
+
+
     End Sub
 
     'this function displays the math learing material to prepare the student for the quizes
@@ -136,6 +144,19 @@ Option Infer Off
         Return temp
 
     End Function
+
+    'this function returns the users results
+    Public Overrides Function displayresults() As String
+        Dim temp As String
+        temp = ""
+        temp &= "Quiz results " & Environment.NewLine & Environment.NewLine
+        temp &= "Subject name: " & (type) & Environment.NewLine
+        temp &= "Marks: " & quiz.mark & Environment.NewLine
+
+        Return temp
+
+    End Function
+
 
 
 End Class

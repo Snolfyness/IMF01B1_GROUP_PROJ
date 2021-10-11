@@ -19,11 +19,20 @@ Option Infer Off
     'these are the attributes
     Private _name As Integer
     Private _mark As Double
-    Private _total As Double
-    Private _average As Double
+    Private _type As String
+
 
 
     'these are the property methods
+
+    Public Property type As String
+        Get
+            Return _type
+        End Get
+        Set(value As String)
+            _type = value
+        End Set
+    End Property
     Public Property name As Integer
         Get
             Return _name
@@ -42,24 +51,7 @@ Option Infer Off
         End Set
     End Property
 
-    Public Property total As Double
-        Get
-            Return _total
-        End Get
-        Set(value As Double)
-            _total = validate(value)
-        End Set
-    End Property
 
-    Public Property average As Double
-        Get
-            Return _average
-
-        End Get
-        Set(value As Double)
-            _average = validate(value)
-        End Set
-    End Property
 
     'END OF PROPERTY METHODS____________________________________________
 
@@ -69,7 +61,7 @@ Option Infer Off
 
 
     'this is the constructor
-    Public Sub New(name As Integer, mark As Double)
+    Public Sub New(name As Integer, mark As Double, type As String)
         _name = name
         Me.mark = mark
     End Sub
@@ -81,6 +73,18 @@ Option Infer Off
         Else
             Return CInt(value)
         End If
+    End Function
+
+    'this function returns the users results
+    Public Overridable Function displayresults() As String
+        Dim temp As String
+        temp = ""
+        temp &= "Quiz results " & Environment.NewLine & Environment.NewLine
+        temp &= "Subject name: " & (type) & Environment.NewLine
+        temp &= "Marks: " & _mark & Environment.NewLine
+
+        Return temp
+
     End Function
 
 End Class

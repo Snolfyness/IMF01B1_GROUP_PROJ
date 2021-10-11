@@ -15,12 +15,21 @@ Public Class MathQuestion
     'private variables
     Private _Question As String
     Private _Answer As Integer
-
+    Private _mark As Integer
     'Property methods
     Public ReadOnly Property Question As String
         Get
             Return _Question
         End Get
+    End Property
+
+    Public Property mark As Integer
+        Get
+            Return _mark
+        End Get
+        Set(value As Integer)
+            _mark = value
+        End Set
     End Property
 
     Public ReadOnly Property Answer As Integer
@@ -30,7 +39,8 @@ Public Class MathQuestion
     End Property
 
     'Constructor
-    Public Sub New(options As Integer)
+    Public Sub New(options As Integer, mark As Integer)
+        Me.mark = mark
         Select Case options
             Case 0
                 GenerateAddition()
