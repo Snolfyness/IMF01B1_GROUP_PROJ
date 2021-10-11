@@ -71,8 +71,11 @@ Public Class frmELearning
         choice = CInt(InputBox("Which Quiz would you like to take? " & Environment.NewLine & "Options:  " & Environment.NewLine & "1 - Math" & Environment.NewLine & "2 - English"))
         Select Case choice
             Case 1 'Maths
+
                 Dim Quiz(10) As MathQuestion
                 Dim mark As Integer = 0
+                Dim type As String = "Maths"
+
                 For q As Integer = 1 To 10
                     Dim temp As String
                     Dim question As Integer
@@ -81,7 +84,8 @@ Public Class frmELearning
                     question = q Mod 4
 
                     Quiz(q) = New MathQuestion(question, mark)
-                    Dim type As String = "Maths"
+
+
                     temp = InputBox("Answer for: " & Quiz(q).Question)
                     display = Quiz(q).Question & Environment.NewLine
                     display &= "Answer: " & Quiz(q).Answer & Environment.NewLine
@@ -94,10 +98,12 @@ Public Class frmELearning
                     End If
                     display &= "Marks: " & mark & "/10" & Environment.NewLine
                     txtdisplay.Text = display
-                Next
+                Next q
 
             Case 2 'English
-                Dim Quiz As EnglishQuestion
+                Dim Eng As EnglishQuestion
+
+                Dim temp As String = ""
                 Dim ans(4) As Integer
                 Dim type As String = "English"
                 ans(1) = 1
@@ -106,15 +112,15 @@ Public Class frmELearning
                 ans(4) = 1
                 Dim mark As Integer = 0
                 Dim name As String = "Math"
-                Quiz = New EnglishQuestion(mark)
+                Eng = New EnglishQuestion(mark)
 
-                Dim temp As String = ""
+
 
                 Dim question(4) As Integer
 
 
                 txtdisplay.Clear()
-                txtdisplay.Text = Quiz.displayquiz()
+                txtdisplay.Text = Eng.displayquiz()
 
                 For q As Integer = 1 To 4
                     question(q) = CInt(InputBox("What is the answer for Question " & CStr(q) & " ?", "Question " & CStr(q)))
@@ -145,9 +151,7 @@ Public Class frmELearning
 
         'this is polymorphism
 
-        For i As Integer = 1 To nsubjects
-            txtdisplay.Text &= subjects(i).displayresults() & Environment.NewLine
-        Next i
+
 
     End Sub
 
