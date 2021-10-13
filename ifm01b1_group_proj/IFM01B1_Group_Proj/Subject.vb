@@ -1,9 +1,8 @@
-﻿
-' *****************************************************************
+﻿' *****************************************************************
 ' Team Number: assigned to team
 ' Team Member 1 Details: Lin, J (221179979)
 ' Team Member 2 Details: Khosa, MTS (221080579)
-' Team Member 3 Details: Rasalanavho, Initials (220054293)
+' Team Member 3 Details: Rasalanavho, R (220054293)
 ' Team Member 4 Details: none
 ' Practical: Team Project
 ' Class name: LearningMaterial
@@ -13,78 +12,65 @@ Option Explicit On
 Option Strict On
 Option Infer Off
 
-'this is the abstract or base class
-<Serializable()> Public MustInherit Class Subject
+<Serializable> Public MustInherit Class subject
+    Private _name As String
+    Private _mark As Integer
 
-    'these are the attributes
-    Private _name As Integer
-    Private _mark As Double
-    Private _type As String
-
-
-
-    'these are the property methods
-
-    Public Property type As String
-        Get
-            Return _type
-        End Get
-        Set(value As String)
-            _type = value
-        End Set
-    End Property
-    Public Property name As Integer
+    Public Property name As String
         Get
             Return _name
         End Get
-        Set(value As Integer)
-            _name = validate(name)
+        Set(value As String)
+            _name = value
         End Set
     End Property
 
-    Public Property mark As Double
+    Public Property mark As Integer
         Get
             Return _mark
         End Get
-        Set(value As Double)
+        Set(value As Integer)
             _mark = validate(value)
         End Set
     End Property
 
-
-
-    'END OF PROPERTY METHODS____________________________________________
-
-
-    'this function generates the learning materials that are needed for the quizes
-    Public MustOverride Function displayLearningmaterial() As String
-
-
-    'this is the constructor
-    Public Sub New(name As Integer, mark As Double, type As String)
-        _name = name
-        Me.mark = mark
-    End Sub
-
-    'this function validates all integer variable
-    Protected Function validate(value As Double) As Integer
+    Protected Function validate(value As Integer) As Integer
         If value < 0 Then
             Return 0
         Else
-            Return CInt(value)
+            Return value
         End If
+
     End Function
 
-    'this function returns the users results
+    Public Sub New(name As String, mark As Integer)
+        Me.name = name
+        Me.mark = mark
+    End Sub
+
     Public Overridable Function displayresults() As String
+
         Dim temp As String
-        temp = ""
-        temp &= "Quiz results " & Environment.NewLine & Environment.NewLine
-        temp &= "Subject name: " & (type) & Environment.NewLine
-        temp &= "Marks: " & _mark & Environment.NewLine
+
+        temp = "Results" & Environment.NewLine & Environment.NewLine
+        temp &= "Quize type: " & name & "Quiz" & Environment.NewLine
+        temp &= "Marks: " & CStr(mark) & Environment.NewLine
 
         Return temp
 
     End Function
 
+    'this function generates the learning materials that are needed for the quizes
+    Public MustOverride Function displayLearningmaterial() As String
+
+    'this is the quiz function
+    Public Overridable Function takeQuiz() As Integer
+
+        'quiz stuff
+
+    End Function
+
+
+
 End Class
+
