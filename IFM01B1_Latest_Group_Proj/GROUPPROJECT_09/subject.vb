@@ -12,7 +12,7 @@ Option Explicit On
 Option Strict On
 Option Infer Off
 
-<Serializable> Public MustInherit Class subject
+<Serializable> Public mustinherit Class subject
     Private _name As String
     Private _mark As Integer
 
@@ -73,4 +73,3 @@ Option Infer Off
 
 
 End Class
-
