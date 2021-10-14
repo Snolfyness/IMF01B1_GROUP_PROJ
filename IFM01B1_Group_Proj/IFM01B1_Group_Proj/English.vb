@@ -53,7 +53,6 @@ Option Infer Off
         End Select
     End Function
 
-
     'this function displays the quiz info
     Public Function displayquiz() As String
         Dim temp As String
@@ -69,8 +68,6 @@ Option Infer Off
         Return temp
     End Function
 
-
-
     'this function displays noun material
     Public Function displaynouns() As String
         Dim temp As String
@@ -85,7 +82,6 @@ Option Infer Off
 
 
         Return temp
-
     End Function
 
     'this function displays verb material
@@ -100,7 +96,6 @@ Option Infer Off
         temp &= "" & Environment.NewLine
 
         Return temp
-
     End Function
 
     'this function displays adjective material
@@ -116,7 +111,6 @@ Option Infer Off
         temp &= "" & Environment.NewLine
 
         Return temp
-
     End Function
 
     'this function displays adverb material
@@ -133,14 +127,11 @@ Option Infer Off
         temp &= "" & Environment.NewLine
         temp &= "" & Environment.NewLine
 
-
         Return temp
-
     End Function
 
     'this function displays the results of the quiz
     Public Overrides Function displayresults() As String
-
         Dim temp As String
 
         temp = "Results" & Environment.NewLine & Environment.NewLine
@@ -149,6 +140,5 @@ Option Infer Off
         temp &= "Marks: " & CStr(mark) & "/4" & Environment.NewLine
 
         Return temp
-
     End Function
 End Class

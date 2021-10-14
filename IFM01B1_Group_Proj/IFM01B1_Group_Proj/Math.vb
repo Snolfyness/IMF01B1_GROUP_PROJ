@@ -229,17 +229,4 @@ Option Infer Off
         _question = a & " / " & b & Environment.NewLine
         _answer = CInt(a / b)
     End Sub
-
-    'this function displays the results
-    Public Overrides Function displayresults() As String
-
-        Dim temp As String
-
-        temp = "Results" & Environment.NewLine & Environment.NewLine
-        temp &= "Quize type: " & name & " Quiz" & Environment.NewLine
-        temp &= "Marks: " & CStr(mark) & "/ 10" & Environment.NewLine
-
-        Return temp
-
-    End Function
 End Class
