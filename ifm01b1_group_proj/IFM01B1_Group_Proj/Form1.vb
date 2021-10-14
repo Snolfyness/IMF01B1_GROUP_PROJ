@@ -62,11 +62,10 @@ Public Class frmELearning
 
     'this button allows the user to take the quiz
     Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
-        txtdisplay.Clear()
         nsubjects += 1
         ReDim Preserve subjects(nsubjects)
         Dim choice As Integer = 1
-        Dim opt As Integer = CInt(InputBox("Which Quiz would you like to take? " & Environment.NewLine & "Options:  " & Environment.NewLine & "1 - English" & Environment.NewLine & "2 - Mathematics"))
+        Dim opt As Integer = CInt(InputBox("Which Quiz would you like to take? " & Environment.NewLine & "Options:  " & Environment.NewLine & "1 - Math" & Environment.NewLine & "2 - English"))
 
         Select Case opt
             Case 1
@@ -104,11 +103,7 @@ Public Class frmELearning
                 subjects(nsubjects) = eng
                 txtdisplay.Text &= eng.displayquiz()
 
-
             Case 2 ' maths
-
-
-
                 Dim Quiz(10) As Math
                 Dim mark As Integer = 0
                 Dim type As String = "Maths"
@@ -144,8 +139,6 @@ Public Class frmELearning
             Case Else
                 txtdisplay.Text = "Please enter a valid option" & Environment.NewLine
 
-
-
         End Select
 
         'polimorphism
@@ -155,7 +148,8 @@ Public Class frmELearning
         Next
     End Sub
 
-    'this button saves the marks
+
+
     Private Sub btnSaveMarks_Click(sender As Object, e As EventArgs) Handles btnSaveMarks.Click
         file = New FileStream(filename, FileMode.Create, FileAccess.Write)
         bf = New BinaryFormatter()
