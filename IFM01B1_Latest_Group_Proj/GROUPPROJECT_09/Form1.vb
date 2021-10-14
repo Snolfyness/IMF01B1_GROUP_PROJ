@@ -2,20 +2,21 @@
 ' Team Number: assigned to team
 ' Team Member 1 Details: Lin, J (221179979)
 ' Team Member 2 Details: Khosa, MTS (221080579)
-' Team Member 3 Details: Rasalanavho, Initials (220054293)
+' Team Member 3 Details: Rasalanavho, R (220054293)
 ' Team Member 4 Details: none
 ' Practical: Team Project
 ' Class name: LearningMaterial
 ' *****************************************************************
 
-Option Strict On
 Option Explicit On
+Option Strict On
 Option Infer Off
 
 Imports System.IO
 Imports System.Runtime.Serialization.Formatters.Binary
 
-Public Class frmELearning
+Public Class Form1
+
     'these are the attributes
 
     Private subjects() As subject
@@ -25,8 +26,8 @@ Public Class frmELearning
     Private bf As BinaryFormatter
 
 
-    'this button allows the user to view learning material
-    Private Sub btnLearnMaterial_Click(sender As Object, e As EventArgs) Handles btnLearnMaterial.Click
+    'this button displays learning material for the student
+    Private Sub btnLearnmaterial_Click(sender As Object, e As EventArgs) Handles btnLearnmaterial.Click
         nsubjects += 1
         ReDim Preserve subjects(nsubjects)
 
@@ -57,12 +58,13 @@ Public Class frmELearning
         nsubjects -= 1
         ReDim Preserve subjects(nsubjects)
 
+
     End Sub
 
 
+
     'this button allows the user to take the quiz
-    Private Sub btnQuiz_Click(sender As Object, e As EventArgs) Handles btnQuiz.Click
-        txtdisplay.Clear()
+    Private Sub btnquiz_Click(sender As Object, e As EventArgs) Handles btnquiz.Click
         nsubjects += 1
         ReDim Preserve subjects(nsubjects)
         Dim choice As Integer = 1
@@ -123,9 +125,9 @@ Public Class frmELearning
                     Quiz(q) = New Math(type, mark, question)
 
 
-                    temp = InputBox("Answer for: " & Quiz(q).question)
-                    display = Quiz(q).question & Environment.NewLine
-                    display &= "Answer: " & Quiz(q).answer & Environment.NewLine
+                    temp = InputBox("Answer for: " & Quiz(q).Question)
+                    display = Quiz(q).Question & Environment.NewLine
+                    display &= "Answer: " & Quiz(q).Answer & Environment.NewLine
 
                     If Quiz(q).CheckAnswer(CInt(temp)) Then
                         mark += 1
@@ -153,10 +155,11 @@ Public Class frmELearning
         For i As Integer = 1 To nsubjects
             txtdisplay.Text &= subjects(i).displayresults() & Environment.NewLine
         Next
+
     End Sub
 
-    'this button saves the marks
-    Private Sub btnSaveMarks_Click(sender As Object, e As EventArgs) Handles btnSaveMarks.Click
+    'this button saves to file
+    Private Sub btnsavetofile_Click(sender As Object, e As EventArgs) Handles btnsavetofile.Click
         file = New FileStream(filename, FileMode.Create, FileAccess.Write)
         bf = New BinaryFormatter()
 
@@ -172,8 +175,8 @@ Public Class frmELearning
         txtdisplay.Clear()
     End Sub
 
-    'this button allows the user to view the marks
-    Private Sub btnViewMarks_Click(sender As Object, e As EventArgs) Handles btnViewMarks.Click
+    'this button reads from file
+    Private Sub btnreadfromfile_Click(sender As Object, e As EventArgs) Handles btnreadfromfile.Click
         txtdisplay.Clear()
         file = New FileStream(filename, FileMode.Open, FileAccess.Read)
         bf = New BinaryFormatter()
@@ -189,4 +192,10 @@ Public Class frmELearning
 
         file.Close()
     End Sub
+
+
 End Class
+
+
+
+

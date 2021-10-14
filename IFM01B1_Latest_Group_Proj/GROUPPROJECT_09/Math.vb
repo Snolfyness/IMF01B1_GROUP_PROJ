@@ -174,7 +174,7 @@ Option Infer Off
 
     'checks input against answer
     Public Function CheckAnswer(input As Integer) As Boolean
-        If input = _answer Then
+        If input = _Answer Then
             Return True
         Else
             Return False
@@ -187,8 +187,8 @@ Option Infer Off
         a = CInt(100 * Rnd() + 1) 'Might be ported to the helper class 
         b = CInt(100 * Rnd() + 1)
 
-        _question = a & " + " & b & Environment.NewLine
-        _answer = a + b
+        _Question = a & " + " & b & Environment.NewLine
+        _Answer = a + b
     End Sub
 
     'GenerateSubtraction method
@@ -202,8 +202,8 @@ Option Infer Off
             b = CInt(100 * Rnd() + 1)
         End While
 
-        _question = a & " - " & b & Environment.NewLine
-        _answer = a - b
+        _Question = a & " - " & b & Environment.NewLine
+        _Answer = a - b
     End Sub
 
     'GenerateMultiplication method
@@ -212,8 +212,8 @@ Option Infer Off
         a = CInt(100 * Rnd() + 1)
         b = CInt(100 * Rnd() + 1)
 
-        _question = a & " x " & b & Environment.NewLine
-        _answer = a * b
+        _Question = a & " x " & b & Environment.NewLine
+        _Answer = a * b
     End Sub
 
     'GenerateDivision method
@@ -226,8 +226,8 @@ Option Infer Off
             a = CInt(100 * Rnd() + 1)
             b = CInt(100 * Rnd() + 1)
         End While
-        _question = a & " / " & b & Environment.NewLine
-        _answer = CInt(a / b)
+        _Question = a & " / " & b & Environment.NewLine
+        _Answer = CInt(a / b)
     End Sub
 
     'this function displays the results
